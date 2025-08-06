@@ -1,15 +1,16 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import { Text, Surface } from 'react-native-paper';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { customColors, shadows, spacing, borderRadius } from '../styles/theme';
 
 const Sidebar = ({ activeScreen, onNavigate }) => {
   const menuItems = [
-    { id: 'Dashboard', icon: '📊', label: 'Dashboard' },
-    { id: 'Leads', icon: '👥', label: 'Leads' },
-    { id: 'Analytics', icon: '📈', label: 'Analytics' },
-    { id: 'Chat', icon: '💬', label: 'Chat' },
-    { id: 'Settings', icon: '⚙️', label: 'Settings' },
+    { id: 'Dashboard', icon: 'view-dashboard-outline', label: 'Dashboard' },
+    { id: 'Leads', icon: 'account-group-outline', label: 'Orders' },
+    { id: 'Analytics', icon: 'chart-line', label: 'Analytics' },
+    { id: 'Chat', icon: 'message-outline', label: 'Messages' },
+    { id: 'Settings', icon: 'cog-outline', label: 'Settings' },
   ];
 
   return (
@@ -18,9 +19,8 @@ const Sidebar = ({ activeScreen, onNavigate }) => {
         {/* Logo/Brand */}
         <View style={styles.brandSection}>
           <View style={styles.logoContainer}>
-            <Text style={styles.logoText}>V</Text>
+            <Icon name="lightning-bolt" size={20} color="#000000" />
           </View>
-          <Text style={styles.brandName}>Vibra</Text>
         </View>
 
         {/* Navigation Items */}
@@ -34,18 +34,11 @@ const Sidebar = ({ activeScreen, onNavigate }) => {
               ]}
               onPress={() => onNavigate(item.id)}
             >
-              <View style={[
-                styles.navIcon,
-                activeScreen === item.id && styles.activeNavIcon
-              ]}>
-                <Text style={styles.navIconText}>{item.icon}</Text>
-              </View>
-              <Text style={[
-                styles.navLabel,
-                activeScreen === item.id && styles.activeNavLabel
-              ]}>
-                {item.label}
-              </Text>
+              <Icon
+                name={item.icon}
+                size={24}
+                color={activeScreen === item.id ? '#FFFFFF' : '#666666'}
+              />
             </TouchableOpacity>
           ))}
         </View>
@@ -53,10 +46,17 @@ const Sidebar = ({ activeScreen, onNavigate }) => {
         {/* Bottom Section */}
         <View style={styles.bottomSection}>
           <TouchableOpacity style={styles.navItem}>
-            <View style={styles.navIcon}>
-              <Text style={styles.navIconText}>❓</Text>
+            <Icon name="help-circle-outline" size={24} color="#666666" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navItem}>
+            <Icon name="cog-outline" size={24} color="#666666" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.navItem}>
+            <View style={styles.userAvatar}>
+              <Text style={styles.userInitial}>B</Text>
             </View>
-            <Text style={styles.navLabel}>Help</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -66,87 +66,60 @@ const Sidebar = ({ activeScreen, onNavigate }) => {
 
 const styles = StyleSheet.create({
   sidebar: {
-    width: 80,
+    width: 70,
     height: '100%',
-    backgroundColor: '#000000',
-    ...shadows.large,
+    backgroundColor: '#0a0a0a',
+    borderRightWidth: 1,
+    borderRightColor: '#1a1a1a',
   },
   sidebarContent: {
     flex: 1,
     paddingVertical: spacing.lg,
     alignItems: 'center',
+    justifyContent: 'space-between',
   },
   brandSection: {
     alignItems: 'center',
-    marginBottom: spacing.xl,
-    paddingBottom: spacing.lg,
-    borderBottomWidth: 1,
-    borderBottomColor: '#333333',
+    marginBottom: spacing.lg,
   },
   logoContainer: {
-    width: 40,
-    height: 40,
-    borderRadius: borderRadius.full,
+    width: 36,
+    height: 36,
+    borderRadius: 8,
     backgroundColor: '#FFFFFF',
     justifyContent: 'center',
     alignItems: 'center',
-    marginBottom: spacing.sm,
-  },
-  logoText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#000000',
-  },
-  brandName: {
-    fontSize: 10,
-    color: '#999999',
-    textAlign: 'center',
   },
   navSection: {
-    flex: 1,
-    width: '100%',
+    alignItems: 'center',
   },
   navItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingVertical: spacing.sm,
-    paddingHorizontal: spacing.md,
-    marginVertical: spacing.xs,
-    borderRadius: borderRadius.md,
-  },
-  activeNavItem: {
-    backgroundColor: '#111111',
-  },
-  navIcon: {
-    width: 32,
-    height: 32,
-    borderRadius: borderRadius.full,
-    backgroundColor: '#666666',
+    width: 40,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: spacing.sm,
+    marginVertical: spacing.sm,
+    borderRadius: 8,
   },
-  activeNavIcon: {
+  activeNavItem: {
     backgroundColor: '#FFFFFF',
   },
-  navIconText: {
-    fontSize: 16,
-  },
-  navLabel: {
-    fontSize: 12,
-    color: '#999999',
-    fontWeight: '500',
-  },
-  activeNavLabel: {
-    color: '#FFFFFF',
-    fontWeight: '600',
-  },
   bottomSection: {
-    width: '100%',
-    paddingTop: spacing.lg,
-    borderTopWidth: 1,
-    borderTopColor: '#333333',
+    alignItems: 'center',
+  },
+  userAvatar: {
+    width: 32,
+    height: 32,
+    borderRadius: 16,
+    backgroundColor: '#4F46E5',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  userInitial: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
   },
 });
 
-export default Sidebar; 
+export default Sidebar;

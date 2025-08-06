@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Lead Genius App",
+    "slug": "lead-genius-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#2196F3"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.leadgeniusapp"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.anonymous.leadgeniusapp"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}

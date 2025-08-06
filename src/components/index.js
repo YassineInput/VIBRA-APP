@@ -3,3 +3,7 @@ export { default as LeadListItem } from './LeadListItem';
 export { default as LoadingSpinner } from './LoadingSpinner';
 export { default as EmptyState } from './EmptyState';
 export { default as Sidebar } from './Sidebar';
+export { default as MetricCard } from './MetricCard';
+export { default as RevenueChart } from './RevenueChart';
+export { default as DonutChart } from './DonutChart';
+export { default as OrderStats } from './OrderStats';

@@ -39,6 +39,7 @@ const RevenueChart = ({ data, title = "Revenue", period = "This month vs last" }
           height={200}
           padding={{ left: 40, right: 40, top: 20, bottom: 40 }}
           domainPadding={{ x: 20 }}
+          standalone={false}
         >
           <VictoryAxis
             dependentAxis
@@ -47,32 +48,34 @@ const RevenueChart = ({ data, title = "Revenue", period = "This month vs last" }
               axis: { stroke: 'transparent' },
               grid: { stroke: '#333333', strokeWidth: 0.5 }
             }}
+            standalone={false}
           />
           <VictoryAxis
             style={{
               axis: { stroke: 'transparent' },
-              tickLabels: { 
-                fill: '#9CA3AF', 
+              tickLabels: {
+                fill: '#9CA3AF',
                 fontSize: 12,
                 fontFamily: 'System'
               }
             }}
+            standalone={false}
           />
           <VictoryBar
             data={chartData}
             x="month"
             y="value"
             style={{
-              data: { 
+              data: {
                 fill: ({ datum, index }) => {
                   // Create gradient-like effect by varying blue intensity
-                  const blues = ['#3B82F6', '#60A5FA', '#93C5FD', '#DBEAFE'];
                   return index % 2 === 0 ? '#60A5FA' : '#3B82F6';
                 }
               }
             }}
             cornerRadius={4}
             barWidth={20}
+            standalone={false}
           />
         </VictoryChart>
       </View>

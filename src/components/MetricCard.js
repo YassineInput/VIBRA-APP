@@ -73,6 +73,7 @@ const styles = StyleSheet.create({
     ...shadows.medium,
     borderWidth: 1,
     borderColor: '#1a1a1a',
+    width: '48%',
   },
   mediumCard: {
     minHeight: 120,

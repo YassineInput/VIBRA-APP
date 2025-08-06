@@ -8,6 +8,7 @@ import Sidebar from './src/components/Sidebar';
 import LoginScreen from './src/screens/LoginScreen';
 import DashboardScreen from './src/screens/DashboardScreen';
 import LeadsScreen from './src/screens/LeadsScreen';
+import OrderListScreen from './src/screens/OrderListScreen';
 import ChatScreen from './src/screens/ChatScreen';
 import AnalyticsScreen from './src/screens/AnalyticsScreen';
 import AddLeadScreen from './src/screens/AddLeadScreen';
@@ -57,7 +58,7 @@ export default function App() {
         />
         <View style={styles.mainContent}>
           {activeScreen === 'Dashboard' && <DashboardScreen />}
-          {activeScreen === 'Leads' && <LeadsScreen />}
+          {activeScreen === 'Leads' && <OrderListScreen />}
           {activeScreen === 'Analytics' && <AnalyticsScreen />}
           {activeScreen === 'Chat' && <ChatScreen />}
           {activeScreen === 'Settings' && <SettingsScreen />}

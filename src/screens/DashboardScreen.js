@@ -4,8 +4,8 @@ import { Title, Button, Card, Text, Surface, Avatar, Chip } from 'react-native-p
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { customColors, shadows, spacing, borderRadius } from '../styles/theme';
 import MetricCard from '../components/MetricCard';
-import RevenueChart from '../components/RevenueChart';
-import DonutChart from '../components/DonutChart';
+import SimpleChart from '../components/SimpleChart';
+import SimpleDonutChart from '../components/SimpleDonutChart';
 import OrderStats from '../components/OrderStats';
 import { demoStats } from '../services/demoData';
 
@@ -100,12 +100,12 @@ export default function DashboardScreen({ navigation }) {
 
         {/* Revenue Chart */}
         <View style={styles.chartSection}>
-          <RevenueChart />
+          <SimpleChart />
         </View>
 
         {/* Sales by Category and Order Stats */}
         <View style={styles.bottomSection}>
-          <DonutChart />
+          <SimpleDonutChart />
           <OrderStats />
         </View>
       </ScrollView>

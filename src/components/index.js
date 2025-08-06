@@ -6,4 +6,6 @@ export { default as Sidebar } from './Sidebar';
 export { default as MetricCard } from './MetricCard';
 export { default as RevenueChart } from './RevenueChart';
 export { default as DonutChart } from './DonutChart';
+export { default as SimpleChart } from './SimpleChart';
+export { default as SimpleDonutChart } from './SimpleDonutChart';
 export { default as OrderStats } from './OrderStats';

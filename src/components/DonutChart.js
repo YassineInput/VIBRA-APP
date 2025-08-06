@@ -41,7 +41,7 @@ const DonutChart = ({ data, title = "Sales by Category", period = "This month vs
             padAngle={2}
             colorScale={chartData.map(item => item.color)}
             labelComponent={<></>}
-            containerComponent={<VictoryContainer responsive={false} />}
+            standalone={false}
           />
           <View style={styles.centerText}>
             <Text style={styles.centerValue}>{total}</Text>

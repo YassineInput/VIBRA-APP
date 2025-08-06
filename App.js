@@ -72,9 +72,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: theme.colors.background,
+    backgroundColor: '#000000',
   },
   mainContent: {
     flex: 1,
+    backgroundColor: '#000000',
   },
 });
